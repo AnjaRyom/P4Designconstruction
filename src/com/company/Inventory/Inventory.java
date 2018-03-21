@@ -1,47 +1,30 @@
 package com.company;
+import java.util.Dictionary;
 
-
-/* Inventory is superclass of productList and productOrder.
- * Here is kept track of products, their listPlacement and whether the stock is low.
+/** Inventory aggregates the class products and keeps track of the inventory.
+ * It tells whether the stock is low.
  * if the stock is too low, it tells if the article has been ordered or not. */
 
 public class Inventory {
-        String productList;
-        int listPlacement;
-        boolean lowStock;
-        boolean isOrdered;
 
-//Constructor
-    public Inventory(String productList, int listPlacement, boolean lowStock, boolean isOrdered) {
-        this.productList = productList;
-        this.listPlacement = listPlacement;
-        this.lowStock = lowStock;
-        this.isOrdered = isOrdered;
-    }
+    /* Dictionary is a type that takes key, K and value, V as parameters.
+     * In this case the key is the product (which is both a type and a class we created ourselves),
+     * and the value is the number of products in stock.
+     * See description here. https://docs.oracle.com/javase/7/docs/api/java/util/Dictionary.html */
+    private Dictionary<Product, int> numberInStock; // this represents the number of a certain product in stock
+    private Dictionary<Product, int> lowStock; // this represents the case where the stock is too low
 
-//Getters and setters for the whole class
-    public String getProductList() {
-        return productList;
-    }
-
-    public int getListPlacement() {
-        return listPlacement;
-    }
-
-    public boolean isLowStock() {
-        return lowStock;
-    }
-
-    public void setLowStock(boolean lowStock) {
+    // This is the start if there is already an existing stock.
+    public Inventory(Dictionary<Product, int> numberInStock, Dictionary<Product, int> lowStock) {
+        this.numberInStock = numberInStock;
         this.lowStock = lowStock;
     }
 
-    public boolean isOrdered() {
-        return isOrdered;
+    // Her laves de første lister af lageret hvis der ikke eksisterer noget i forvejen.
+    public Inventory() {
+        this.lowStock = new Dictionary();
+        this.numberInStock = new Dictionary();
     }
 
-    public void setOrdered(boolean ordered) {
-        isOrdered = ordered;
-    }
-
+    
 }
