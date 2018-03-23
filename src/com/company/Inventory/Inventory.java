@@ -20,11 +20,11 @@ public class Inventory {
         this.lowStock = lowStock;
     }
 
-    // Her laves de første lister af lageret hvis der ikke eksisterer noget i forvejen.
+    // If there is no existing stock, this is the start and the first lists will be created.
     public Inventory() {
         this.lowStock = new Dictionary();
         this.numberInStock = new Dictionary();
     }
 
-    
+
 }

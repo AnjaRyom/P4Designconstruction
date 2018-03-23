@@ -3,7 +3,7 @@ package com.company;
 /* The productOrder class is for the purpose of ordering products. This contains all the info that is needed for the order.
  * As it is an abstract class, it inherits all the the attributes from it's superclass. */
 
-public abstract class ProductOrder extends Product {
+public class ProductOrder {
         int numberOfProductsOrdered;
         int hairSalonCustomerNo;
         String hairSalonAddress;
@@ -11,54 +11,28 @@ public abstract class ProductOrder extends Product {
         String deliveryTime;
         String deliveryConditions;
 
-//Constructor
-        public ProductOrder(String productList,
-                            int listPlacement,
-                            boolean lowStock,
-                            boolean isOrdered,
-                            String brand,
-                            String category,
-                            String name,
-                            String partNo,
-                            int shelfPlace,
-                            int numberInStock,
-                            double purchasePrice,
-                            double retailPrice,
-                            int numberOfProductsOrdered,
-                            int hairSalonCustomerNo,
-                            String hairSalonAddress,
-                            String paymentInfo,
-                            String deliveryTime,
-                            String deliveryConditions) {
-            super(productList,
-                    listPlacement,
-                    lowStock,
-                    isOrdered,
-                    brand,
-                    category,
-                    name,
-                    partNo,
-                    shelfPlace,
-                    numberInStock,
-                    purchasePrice,
-                    retailPrice);
-            this.numberOfProductsOrdered = numberOfProductsOrdered;
-            this.hairSalonCustomerNo = hairSalonCustomerNo;
-            this.hairSalonAddress = hairSalonAddress;
-            this.paymentInfo = paymentInfo;
-            this.deliveryTime = deliveryTime;
-            this.deliveryConditions = deliveryConditions;
-        }
+    //Constructor
 
+    public ProductOrder(int numberOfProductsOrdered,
+                        int hairSalonCustomerNo,
+                        String hairSalonAddress,
+                        String paymentInfo,
+                        String deliveryTime,
+                        String deliveryConditions) {
+        this.numberOfProductsOrdered = numberOfProductsOrdered;
+        this.hairSalonCustomerNo = hairSalonCustomerNo;
+        this.hairSalonAddress = hairSalonAddress;
+        this.paymentInfo = paymentInfo;
+        this.deliveryTime = deliveryTime;
+        this.deliveryConditions = deliveryConditions;
+    }
 
-//Getters and setters
+    //Getters and setters
         public int getNumberOfProductsOrdered() {
             return numberOfProductsOrdered;
         }
 
-        public void setNumberOfProductsOrdered(int numberOfProductsOrdered) {
-            this.numberOfProductsOrdered = numberOfProductsOrdered;
-        }
+        public void setNumberOfProductsOrdered(int numberOfProductsOrdered) { this.numberOfProductsOrdered = numberOfProductsOrdered; }
 
         public int getHairSalonCustomerNo() {
             return hairSalonCustomerNo;

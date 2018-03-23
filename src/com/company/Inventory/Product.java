@@ -2,8 +2,8 @@ package com.company;
 
 
 /* The Product class contains info about the single product
- * it can be edited by using the constructor but only location and retailPrice can be
- * edited when it already exist.
+ * it can be edited by using the constructor but only location
+ * and retailPrice can be edited when it already exist (by setters).
  */
 
 public class Product {
@@ -12,7 +12,7 @@ public class Product {
     private String name;
     private String partNo;
     private Location location;
-    //private int numberInStock;   flyt til inventory
+    //private int numberInStock;   flyttet til inventory
     private double purchasePrice;
     private double retailPrice;
 
