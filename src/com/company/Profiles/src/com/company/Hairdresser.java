@@ -1,6 +1,6 @@
 package com.company;
 
-public class Hairdresser {
+public class Hairdresser extends Employee {
 
     private String preferences;
 

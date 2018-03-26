@@ -1,6 +1,6 @@
 package com.company;
 
-public class Apprentices {
+public class Apprentices extends Employee {
 
     private boolean scholarship;
 
