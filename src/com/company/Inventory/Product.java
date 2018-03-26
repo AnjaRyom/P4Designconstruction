@@ -2,7 +2,7 @@ package com.company;
 
 //This class is a super-class for; Service, ArticleInUse and Article.
 public abstract class Product{
-    private String category;
+    //private String category;
     private String name;
     private double purchasePrice;
 
@@ -14,9 +14,9 @@ public abstract class Product{
     }
 
     //Getters
-    public String getCategory() {
+    /*public String getCategory() {
         return category;
-    }
+    }*/
 
     public String getName() {
         return name;

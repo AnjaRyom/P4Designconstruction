@@ -14,6 +14,7 @@ public class Article extends Product {
     private Location location;
     private double purchasePrice;
     private double retailPrice;
+    private int expirationDate;
 
     //Constructor
     public Article(String brand,
@@ -30,6 +31,7 @@ public class Article extends Product {
         this.location = location;
         this.purchasePrice = purchasePrice;
         this.retailPrice = retailPrice;
+        this.expirationDate = expirationDate;
     }
 
     //Getters
@@ -61,6 +63,8 @@ public class Article extends Product {
     public double getRetailPrice() {
         return retailPrice;
     }
+
+    public int getExpirationDate() { return expirationDate; }
 
     //Setters - those without setter cannot be edited by other than the object itself
 
