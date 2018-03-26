@@ -1,6 +1,6 @@
 package com.company;
 
-public abstract class Employee {
+public abstract class Employee extends Person {
 
     private double basePrice;
     private int experienceYears;
