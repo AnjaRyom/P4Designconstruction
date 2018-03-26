@@ -1,4 +1,4 @@
 package com.company;
 
-public class Employee {
+public abstract class Employee {
 }
