@@ -4,13 +4,13 @@ package com.company;
 public abstract class Product{
     //private String category;
     private String name;
-    private double purchasePrice;
+    //private double purchasePrice;
 
     //Constructors
     public Product(String category, String name, double purchasePrice) {
         this.category = category;
         this.name = name;
-        this.purchasePrice = purchasePrice;
+        //this.purchasePrice = purchasePrice;
     }
 
     //Getters
@@ -22,14 +22,14 @@ public abstract class Product{
         return name;
     }
 
-    public double getPurchasePrice() {
+    /* public double getPurchasePrice() {
         return purchasePrice;
     }
 
     //Setters
     public void setPurchasePrice(double purchasePrice) {
         this.purchasePrice = purchasePrice;
-    }
+    } */
 }
 
 

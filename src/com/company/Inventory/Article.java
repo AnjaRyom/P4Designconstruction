@@ -40,9 +40,7 @@ public class Article extends Product {
         return brand;
     }
 
-    public String getCategory() {
-        return category;
-    }
+    public String getCategory() { return category; }
 
     public String getName() {
         return name;

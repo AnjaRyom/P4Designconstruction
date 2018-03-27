@@ -20,7 +20,7 @@ public class Inventory {
         this.lowStock = lowStock;
     }
 
-    // If there is no existing stock, this is the start and the first lists will be created.
+    // If there is no existing stock, this is the start and the first map will be created.
     public Inventory() {
         this.lowStock = new HashMap();
         this.numberInStock = new HashMap();
@@ -37,12 +37,11 @@ public class Inventory {
      */
 
 
-
     /* method overloading = two functions can have the same name
      * - in the cases below (addArticle and removeArticle) , if we call both parameter article and parameter number
      * the first function will be called, if we only have a parameter, article the second method will be used. */
 
-    // method signature - fill out functionality
+    // fill out functionality (method signature)
     /**
      * This adds a number of articles to the inventory
      * @param a Article
@@ -86,4 +85,13 @@ public class Inventory {
     public void SetStockAlertValue (Article a, int count){
     }
 
+    //Fill out functionality
+
+    /**
+     * Clears the stock alert value for a product that has already such a value
+     * @param a Article
+     */
+    public void clearStockAlertValue (Article a){
+
+    }
 }

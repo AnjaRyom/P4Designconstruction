@@ -3,25 +3,23 @@ package com.company;
 /*
 * This class specifies the service, that is given to a specifik customer.
 */
-public class Service extends Product{
-    private String serviceCategory; //Skal der laves en separat klasse for kategori, da det kan indeholde flere variable?
+public class Service extends Product {
+    private Treatment treatment;
     private double retailPrice;
     private int time; //The time it takes to accomplish a service.
 
-    //Contructors
-    public Service(String serviceCategory, double retailPrice, int time) {
-        this.serviceCategory = serviceCategory;
+    public Service(Treatment treatment, double retailPrice, int time) {
+        this.treatment = treatment;
         this.retailPrice = retailPrice;
         this.time = time;
     }
 
-    //Getters and setters
-    public String getServiceCategory() {
-        return serviceCategory;
+    public Treatment getTreatment() {
+        return treatment;
     }
 
-    public void setServiceCategory(String serviceCategory) {
-        this.serviceCategory = serviceCategory;
+    public void setTreatment(Treatment treatment) {
+        this.treatment = treatment;
     }
 
     public double getRetailPrice() {
