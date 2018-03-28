@@ -1,4 +1,4 @@
-package com.company;
+package sample;
 
 public abstract class Employee extends Person {
 
@@ -12,8 +12,10 @@ public abstract class Employee extends Person {
     private boolean present;
     private boolean bonus;
 
-    public Employee(double basePrice, int experienceYears, int experienceMonths, String description, String recommendations,
-                    int holidayDaysAmount, int sicknessDaysAmount, boolean present, boolean bonus) {
+    public Employee(String firstName, String lastName, String address, int phoneNumber, int dateOfBirth, String sex,
+                    double basePrice, int experienceYears, int experienceMonths, String description,
+                    String recommendations, int holidayDaysAmount, int sicknessDaysAmount, boolean present, boolean bonus) {
+        super(firstName, lastName, address, phoneNumber, dateOfBirth, sex);
         this.basePrice = basePrice;
         this.experienceYears = experienceYears;
         this.experienceMonths = experienceMonths;

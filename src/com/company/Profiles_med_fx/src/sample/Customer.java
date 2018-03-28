@@ -1,4 +1,4 @@
-package com.company;
+package sample;
 
 public class Customer extends Person {
 
@@ -7,9 +7,11 @@ public class Customer extends Person {
     private String hairLength;
     private String purchasedProducts;
     private int ranking;
-    private string notes;
+    private String notes;
 
-    public Customer(String hairtype, String hairColor, String hairLength, String purchasedProducts, int ranking, string notes) {
+    public Customer(String firstName, String lastName, String address, int phoneNumber, int dateOfBirth, String sex,
+                    String hairtype, String hairColor, String hairLength, String purchasedProducts, int ranking, String notes) {
+        super(firstName, lastName, address, phoneNumber, dateOfBirth, sex);
         this.hairtype = hairtype;
         this.hairColor = hairColor;
         this.hairLength = hairLength;
@@ -58,11 +60,13 @@ public class Customer extends Person {
         this.ranking = ranking;
     }
 
-    public string getNotes() {
+    public String getNotes() {
         return notes;
     }
 
-    public void setNotes(string notes) {
+    public void setNotes(String notes) {
         this.notes = notes;
     }
 }
+
+
