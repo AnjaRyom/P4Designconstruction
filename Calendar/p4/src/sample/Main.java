@@ -1,0 +1,45 @@
+package sample;
+
+import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+import java.util.Calendar;
+
+
+public class Main extends Application {
+
+    Stage window;
+    public enum Employee{
+        Gry,Jessica
+    }
+
+    public static void main(String[] args)
+    {
+        launch(args);
+    }
+
+
+    public void start(Stage primaryStage) throws Exception{
+        window = primaryStage;
+        window.setTitle("Hairdresser");
+        Controller controller = new Controller();
+        Scene calendarViewScene = new CalendarView(new BorderPane(),1000,600, controller);
+        controller.setCurrentScene(calendarViewScene);
+
+        window.setScene(calendarViewScene);
+        window.show();
+    }
+
+
+    //How to react on close
+    private void closeProgram(){
+        boolean answer = ConfirmBox.display("Title", "Sure you want to exit?");
+        if(answer==true){
+            window.close();
+        }
+    };
+}
