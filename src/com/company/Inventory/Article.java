@@ -7,43 +7,40 @@ package com.company;
  */
 
 public class Article extends Product {
-    private String brand;
-    private String category;
-    private String name;
+    private int contentInMl;
+    private int usedMl;
+    private String brand; //field.
     private String partNo;
     private Location location;
-    private double purchasePrice;
-    private double retailPrice;
-    private int expirationDate;
+    private int purchasePrice; //This field is an int, because we calculate it in cents.
+    private int retailPrice;
+    private Date expirationDate; //Date is a type for representing dates.
 
     //Constructor
-    public Article(String brand,
+    public Article(int contentInMl,
+                   String brand,
                    String category,
                    String name,
                    String partNo,
                    int location,
-                   double purchasePrice,
-                   double retailPrice) {
+                   int purchasePrice,
+                   int retailPrice,
+                   Date expirationDate) {
+        super(category, name); //Call the constructor of this super-class.
         this.brand = brand;
-        this.category = category;
-        this.name = name;
         this.partNo = partNo;
         this.location = location;
         this.purchasePrice = purchasePrice;
         this.retailPrice = retailPrice;
         this.expirationDate = expirationDate;
+        this.usedMl = 0;
     }
 
     //Getters
+    public int getContentInMl() {return contentInMl; }
 
     public String getBrand() {
         return brand;
-    }
-
-    public String getCategory() { return category; }
-
-    public String getName() {
-        return name;
     }
 
     public String getPartNo() {
@@ -54,15 +51,15 @@ public class Article extends Product {
         return location;
     }
 
-    public double getPurchasePrice() {
+    public int getPurchasePrice() {
         return purchasePrice;
     }
 
-    public double getRetailPrice() {
+    public int getRetailPrice() {
         return retailPrice;
     }
 
-    public int getExpirationDate() { return expirationDate; }
+    public Date getExpirationDate() { return expirationDate; }
 
     //Setters - those without setter cannot be edited by other than the object itself
 
@@ -77,6 +74,47 @@ public class Article extends Product {
     public void setRetailPrice(double retailPrice) {
         this.retailPrice = retailPrice;
     }
+
+    /**
+     * Check if product has expired.
+     * @param currentDate
+     * @return if the product has expired "true", otherwise "false".
+     */
+    public boolean isExpired(Date currentDate) {
+        return currentDate > this.expirationDate;
+    }
+
+    public boolean isInUse() {
+        return this.usedMl != 0;
+    }
+
+    /**
+     * Check how much left in ml.
+     * @return the amount left in ml.
+     */
+    public int amountLeftInMl() {
+        return this.contentInMl-this.usedMl;
+    }
+
+    /**
+     * Check if enough left for a service.
+     * @param service
+     * @return There is enough left for the service.
+     */
+    public boolean enoughLeftFor(Service service) {
+        Map<String, int> products = service.getRequiredProducts();
+        int requiredAmount =  products.get(this.getName());
+        return requiredAmount <= this.amountLeftInMl();
+    }
+
+    /**
+     * Product usage in ml.
+     * @param ml
+     */
+    public void use(int ml){
+        this.usedMl += ml;
+    }
+
 }
 
 

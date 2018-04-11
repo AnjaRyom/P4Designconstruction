@@ -7,6 +7,7 @@ public class Service extends Product {
     private Treatment treatment;
     private double retailPrice;
     private int time; //The time it takes to accomplish a service.
+    private Map<String, int> requiredProducts; //products and the amount of them that should be used.
 
     public Service(Treatment treatment, double retailPrice, int time) {
         this.treatment = treatment;
@@ -37,4 +38,6 @@ public class Service extends Product {
     public void setTime(int time) {
         this.time = time;
     }
+
+    public Map<String, int> getRequiredProducts() { return requiredProducts; }
 }
