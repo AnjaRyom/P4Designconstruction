@@ -1,4 +1,4 @@
-package sample;
+package sample.Model;
 
 public class Customer extends Person {
 

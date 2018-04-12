@@ -1,4 +1,4 @@
-package sample;
+package sample.Model;
 
 public abstract class Employee extends Person {
 
@@ -11,10 +11,11 @@ public abstract class Employee extends Person {
     private int sicknessDaysAmount;
     private boolean present;
     private boolean bonus;
+    private String identificationColor;
 
     public Employee(String firstName, String lastName, String address, int phoneNumber, int dateOfBirth, String sex,
                     double basePrice, int experienceYears, int experienceMonths, String description,
-                    String recommendations, int holidayDaysAmount, int sicknessDaysAmount, boolean present, boolean bonus) {
+                    String recommendations, int holidayDaysAmount, int sicknessDaysAmount, boolean present, boolean bonus, String identificationColor) {
         super(firstName, lastName, address, phoneNumber, dateOfBirth, sex);
         this.basePrice = basePrice;
         this.experienceYears = experienceYears;
@@ -25,6 +26,7 @@ public abstract class Employee extends Person {
         this.sicknessDaysAmount = sicknessDaysAmount;
         this.present = present;
         this.bonus = bonus;
+        this.identificationColor = identificationColor;
     }
 
     public double getBasePrice() {
@@ -97,5 +99,13 @@ public abstract class Employee extends Person {
 
     public void setBonus(boolean bonus) {
         this.bonus = bonus;
+    }
+
+    public String getIdentificationColor() {
+        return identificationColor;
+    }
+
+    public void setIdentificationColor(String identificationColor) {
+        this.identificationColor = identificationColor;
     }
 }
