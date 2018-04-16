@@ -19,7 +19,6 @@ public class Main extends Application {
 
         primaryStage.setTitle("Profiles");
 
-
         //Here we make an instance of the profile view which is a BorderPane and shows it.
 
         Scene ProfileViewScene = new ProfileView(new BorderPane(),500,500);
