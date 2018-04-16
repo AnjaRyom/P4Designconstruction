@@ -64,7 +64,7 @@ public class Article extends Product {
     //Setters - those without setter cannot be edited by other than the object itself
 
     /**
-     * Change article location
+     * Change or set article location
      * @param location New article location
      */
     public void setLocation(int location) {
@@ -108,12 +108,21 @@ public class Article extends Product {
     }
 
     /**
-     * Product usage in ml.
+     * Product usage in ml. Checks if there is enough left in the bottle and if not, it calculates how much more is left.
      * @param ml
      */
-    public void use(int ml){
+    public int use(int ml){
+
+        if (amountLeftInMl() < ml){
+            this.usedMl += amountLeftInMl();
+            return ml - amountLeftInMl();
+        }
+
         this.usedMl += ml;
+        return 0;
     }
+
+
 
 }
 

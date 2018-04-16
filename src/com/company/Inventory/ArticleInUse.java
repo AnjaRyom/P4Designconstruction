@@ -1,9 +1,12 @@
 package com.company;
 
-/*
-* This class specifies articles that are in use by hairdressers.
-* The amount of specific articles can be changed.
-*/
+/*  ************ OBSOLETE OBSOLETE OBSOLETE OBSOLETE OBSOLETE OBSOLETE **********
+ * The functionality of this class has been moved to Article.
+ *
+ * This class specifies articles that are in use by hairdressers.
+ * The amount of specific articles can be changed.
+ */
+
 public class ArticleInUse extends Article{
     private int amountUsedInMl;
 

@@ -1,13 +1,13 @@
 package com.company;
 
 /*
-* This class specifies the service, that is given to a specifik customer.
+* This class specifies the service, that is given to a specific customer.
 */
 public class Service extends Product {
-    private Treatment treatment;
+    private Treatment treatment; //enum
     private double retailPrice;
     private int time; //The time it takes to accomplish a service.
-    private Map<String, int> requiredProducts; //products and the amount of them that should be used.
+    private Map<String, int> requiredProducts; //products (eg. shampoo) and the amount of them that should be used.
 
     public Service(Treatment treatment, double retailPrice, int time) {
         this.treatment = treatment;
@@ -40,4 +40,6 @@ public class Service extends Product {
     }
 
     public Map<String, int> getRequiredProducts() { return requiredProducts; }
+
+
 }

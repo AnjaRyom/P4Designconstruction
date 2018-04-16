@@ -1,6 +1,6 @@
 package com.company;
 
-//This class is a super-class for; Service, ArticleInUse and Article.
+//This class is a super-class for; Service and Article.
 public abstract class Product{
     private String category;
     private String name;
