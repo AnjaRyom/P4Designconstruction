@@ -1,10 +1,16 @@
 package sample.View;
 
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 /* This class describes the Profileview which is a scene*/
 
@@ -31,7 +37,6 @@ public class ProfileView extends Scene{
             clickMe.setText("Noooo u clicked");
         });
 
-        Button topButton = new Button ("Sej");
 
 
 // We're placing our menus on specific places in BorderPane
@@ -44,11 +49,25 @@ public class ProfileView extends Scene{
 // We add buttons ect. to the layout (For adding more, use addAll instead of add)
 
         centerMenu.getChildren().add(clickMe);
-        topMenu.getChildren().add(topButton);
+
 
 // Since Profileview is a Scene, it is supposed to have an origin/root.
 // Here we define the root, which can be seen earlier in the constructor input which is at that point empty.
         super.setRoot(layout);
+
+        TabPane tabPane = new TabPane();
+        Tab employeeTab = new Tab();
+        Tab customerTab = new Tab();
+        employeeTab.setText("Medarbejdere");
+        customerTab.setText("Kunder");
+        employeeTab.setContent();
+        tabPane.getTabs().add(employeeTab);
+        tabPane.getTabs().add(customerTab);
+        tabPane.setTabMinWidth(330);
+        tabPane.setPadding(new Insets(0,0,0,200));
+        topMenu.getChildren().addAll(tabPane);
+
+
 
     }
 
