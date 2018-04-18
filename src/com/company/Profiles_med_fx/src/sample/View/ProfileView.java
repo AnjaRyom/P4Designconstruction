@@ -9,8 +9,10 @@ import javafx.scene.control.TabPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import sample.Model.Employee;
 
 /* This class describes the Profileview which is a scene*/
 
@@ -29,14 +31,6 @@ public class ProfileView extends Scene{
     public ProfileView(Parent root, double width, double height) {
         super(root, width, height);
 
-        Button clickMe = new Button("Click me");
-
-// Set on action to button (reaction) which is made by a lambda expression
-
-        clickMe.setOnAction(e-> {
-            clickMe.setText("Noooo u clicked");
-        });
-
 
 
 // We're placing our menus on specific places in BorderPane
@@ -48,7 +42,6 @@ public class ProfileView extends Scene{
 
 // We add buttons ect. to the layout (For adding more, use addAll instead of add)
 
-        centerMenu.getChildren().add(clickMe);
 
 
 // Since Profileview is a Scene, it is supposed to have an origin/root.
@@ -60,14 +53,12 @@ public class ProfileView extends Scene{
         Tab customerTab = new Tab();
         employeeTab.setText("Medarbejdere");
         customerTab.setText("Kunder");
-        employeeTab.setContent();
         tabPane.getTabs().add(employeeTab);
         tabPane.getTabs().add(customerTab);
         tabPane.setTabMinWidth(330);
         tabPane.setPadding(new Insets(0,0,0,200));
         topMenu.getChildren().addAll(tabPane);
-
-
+        
 
     }
 
