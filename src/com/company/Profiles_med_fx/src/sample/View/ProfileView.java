@@ -1,6 +1,7 @@
 package sample.View;
 
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -58,7 +59,22 @@ public class ProfileView extends Scene{
         tabPane.setTabMinWidth(330);
         tabPane.setPadding(new Insets(0,0,0,200));
         topMenu.getChildren().addAll(tabPane);
-        
+
+
+        GridPane employeegrid = new GridPane();
+        Button xx = new Button("HEEEEEJ MEEED DIIIG");
+        employeegrid.getChildren().addAll(xx);
+        employeegrid.setStyle("-fx-background-color: #5433c4;");
+        employeeTab.setContent(employeegrid);
+
+
+        GridPane customergrid = new GridPane();
+        Button yy = new Button("DETTE ER FOR NICE");
+        customergrid.getChildren().addAll(yy);
+        customergrid.setStyle("-fx-background-color: black;");
+        customerTab.setContent(customergrid);
+
+
 
     }
 
