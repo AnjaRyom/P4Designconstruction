@@ -8,9 +8,16 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import sample.Model.Employee;
+import sample.Model.Person;
 import sample.View.ProfileView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main extends Application {
+
+    public static List<Employee> employees = new ArrayList<>();
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -24,6 +31,11 @@ public class Main extends Application {
         Scene ProfileViewScene = new ProfileView(new BorderPane(),910,500);
         primaryStage.setScene(ProfileViewScene);
         primaryStage.show();
+
+        employees.add(new Employee("Tommy", "Hansen", "Something", 88888888, 123, "Mand", 200, 2, 5, "blabla", "jaja", 2, 0, true, true, "blue"));
+        employees.add(new Employee("Simone", "Hansen", "Something", 88888888, 123, "Kvinde", 200, 2, 5, "blabla", "jaja", 2, 0, true, true, "blue"));
+        employees.add(new Employee("Lise", "Hansen", "Something", 88888888, 123, "Kvinde", 200, 2, 5, "blabla", "jaja", 2, 0, true, true, "blue" ));
+        employees.add(new Employee("Cecilie",  "Hansen", "Something", 88888888, 123, "Kvinde", 200, 2, 5, "blabla", "jaja", 2, 0, true, true, "blue"));
 
 
 

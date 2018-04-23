@@ -5,6 +5,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.effect.DropShadow;
@@ -16,6 +17,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Window;
 import sample.Model.Employee;
+import sample.Main;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /* This class describes the Profileview which is a scene*/
 
@@ -71,6 +76,7 @@ public class ProfileView extends Scene{
         // employeegrid.setStyle("-fx-background-color: #EFEFEF;");
         employeeTab.setContent(employeegrid);
         VBox employeeOne = new VBox();
+
         VBox employeeTwo = new VBox();
         VBox employeeThree = new VBox();
         VBox employeeFour = new VBox();
@@ -135,12 +141,23 @@ public class ProfileView extends Scene{
         employeeThree.setEffect(dropShadow);
         employeeFour.setEffect(dropShadow);
 
+        Label firstName = new Label();
+        String firstNameOfEmployee = Main.employees.get(0).getFirstName();
+        firstName.setText(firstNameOfEmployee);
+        System.out.println(firstName);
+
+        employeeOne.getChildren().addAll(firstName);
+        
+
+
 
         GridPane customergrid = new GridPane();
         Button yy = new Button("DETTE ER FOR NICE");
         customergrid.getChildren().addAll(yy);
         customergrid.setStyle("-fx-background-color: black;");
         customerTab.setContent(customergrid);
+
+
 
 
 

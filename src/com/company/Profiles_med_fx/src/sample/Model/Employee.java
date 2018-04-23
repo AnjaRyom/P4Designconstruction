@@ -1,6 +1,6 @@
 package sample.Model;
 
-public abstract class Employee extends Person {
+public class Employee extends Person {
 
     private double basePrice;
     private int experienceYears;
@@ -29,6 +29,7 @@ public abstract class Employee extends Person {
         this.bonus = bonus;
         this.identificationColor = identificationColor;
     }
+
 
     public double getBasePrice() {
         return basePrice;
