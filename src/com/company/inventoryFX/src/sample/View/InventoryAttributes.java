@@ -1,4 +1,5 @@
 package sample.View;
+import javafx.scene.control.Button;
 
 public class InventoryAttributes {
 
@@ -6,7 +7,9 @@ public class InventoryAttributes {
     private int productNr;
     private double price;
     private int quantity;
+    private Button orderButton;
     //private boolean ordered;
+
 
 //Base value of the columns
     public InventoryAttributes() {
@@ -14,14 +17,16 @@ public class InventoryAttributes {
         this.productNr = 0;
         this.price = 0;
         this.quantity = 0;
+        this.orderButton.setText("Bestil");
         //this.ordered = false;
     }
 
-    public InventoryAttributes (String name, int productNr, double price, int quantity){
+    public InventoryAttributes (String name, int productNr, double price, int quantity, Button orderButton){
         this.name = name;
         this.productNr = productNr;
         this.price = price;
         this.quantity = quantity;
+        this.orderButton = orderButton;
         //this.ordered = ordered;
     }
 
@@ -52,7 +57,15 @@ public class InventoryAttributes {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-/*
+
+    public Button getOrderButton() {
+        return orderButton;
+    }
+    public void setOrderButton(Button orderButton) {
+        this.orderButton = orderButton;
+    }
+
+    /*
     public Boolean getOrdered() {
         return ordered;
     }

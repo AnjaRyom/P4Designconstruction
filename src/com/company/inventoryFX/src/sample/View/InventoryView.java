@@ -21,6 +21,7 @@ public class InventoryView extends Scene {
     CenterMenu centerMenu = new CenterMenu();
     LeftMenu leftMenu = new LeftMenu();
     TopMenu topMenu = new TopMenu();
+    Button orderButton;
 
     //Constructor of class, makes buttons and inserts them correctly
 
@@ -34,20 +35,24 @@ public class InventoryView extends Scene {
 
         //Here we make up the table
         TableColumn<InventoryAttributes, String> nameColumn = new TableColumn<>("Navn");
-        nameColumn.setMinWidth(300);
+        nameColumn.setMinWidth(400);
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
         TableColumn<InventoryAttributes, String> productNrColumn = new TableColumn<>("Produkt Nr.");
-        productNrColumn.setMinWidth(200);
+        productNrColumn.setMinWidth(250);
         productNrColumn.setCellValueFactory(new PropertyValueFactory<>("productNr"));
 
         TableColumn<InventoryAttributes, String> priceColumn = new TableColumn<>("Pris");
-        priceColumn.setMinWidth(200);
+        priceColumn.setMinWidth(250);
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
         TableColumn<InventoryAttributes, String> quantityColumn = new TableColumn<>("På lager");
-        quantityColumn.setMinWidth(200);
+        quantityColumn.setMinWidth(250);
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+
+        TableColumn<InventoryAttributes, String> orderedColumn = new TableColumn<>("Bestil");
+        orderedColumn.setMinWidth(250);
+        orderedColumn.setCellValueFactory(new PropertyValueFactory<>("orderButton"));
 
         /*
         TableColumn<InventoryAttributes, String> orderedColumn = new TableColumn<>("Bestil");
@@ -58,7 +63,7 @@ public class InventoryView extends Scene {
 
         table = new TableView<>();
         table.setItems(getArticle());
-        table.getColumns().addAll(nameColumn, productNrColumn,priceColumn,quantityColumn);
+        table.getColumns().addAll(nameColumn, productNrColumn,priceColumn,quantityColumn, orderedColumn);
 
         //Need a gridpane in here, in which we will make a table
         GridPane inventoryGridpane = new GridPane();
@@ -67,12 +72,12 @@ public class InventoryView extends Scene {
         inventoryGridpane.setPadding(new Insets(0,0,0,0));
 
 
-        //The last column should be a button, instead of just a boolean
-        Button orderButton = new Button("Bestil");
+                //The last column should be a button, instead of just a boolean
+        //Button orderButton = new Button("Bestil");
 
 
 
-        inventoryGridpane.getChildren().addAll(table, orderButton);
+        inventoryGridpane.getChildren().addAll(table);
 
         layout.setCenter(inventoryGridpane);
         layout.setLeft(leftMenu);
@@ -86,15 +91,15 @@ public class InventoryView extends Scene {
         ObservableList<InventoryAttributes> articles = FXCollections.observableArrayList();
 
         articles.add(new InventoryAttributes
-                ("Whatever Shampoo", 72401, 14.99, 88));
+                ("Whatever Shampoo", 72401, 14.99, 88, orderButton = new Button("Bestil")));
         articles.add(new InventoryAttributes
-                ("The Correct HairGoo", 15727, 18.44, 67));
+                ("The Correct HairGoo", 15727, 18.44, 67, orderButton = new Button("Bestil")));
         articles.add(new InventoryAttributes
-                ("Sister's Scissor", 34437, 4.99, 12));
+                ("Sister's Scissor", 34437, 4.99, 12, orderButton = new Button("Bestil")));
         articles.add(new InventoryAttributes
-                ("Balsamico Balsam", 14895, 21.95, 27));
+                ("Balsamico Balsam", 14895, 21.95, 27, orderButton = new Button("Bestil")));
         articles.add(new InventoryAttributes
-                ("Psycho Shaver", 14894, 104.95, 3));
+                ("Psycho Shaver", 14894, 104.95, 3, orderButton = new Button("Bestil")));
         return articles;
     }
 

@@ -19,7 +19,7 @@ public class Main extends Application {
         primaryStage.setTitle("Inventory");
 
         //Instance of inventory view - border pane
-        Scene InventoryViewScene = new InventoryView(new BorderPane(), 1000, 600);
+        Scene InventoryViewScene = new InventoryView(new BorderPane(), 1600, 800);
         primaryStage.setScene(InventoryViewScene);
         primaryStage.show();
     }
