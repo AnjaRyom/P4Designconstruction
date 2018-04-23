@@ -148,14 +148,39 @@ public class ProfileView extends Scene{
         System.out.println(lastNameTwo);
 
 
+// Third hairdresser labels
+        Label firstNameThree = new Label();
+        String firstNameOfEmployeeThree = Main.employees.get(2).getFirstName();
+        firstNameThree.setText(firstNameOfEmployeeThree);
+        System.out.println(firstNameThree);
+        firstNameThree.setStyle("-fx-font: 17 arial");
+
+        Label lastNameThree = new Label();
+        String lastNameOfEmployeeThree = Main.employees.get(2).getLastName();
+        lastNameThree.setText(lastNameOfEmployeeThree);
+        System.out.println(lastNameThree);
+
+
+// Fourth hairdresser labels
+        Label firstNameFour = new Label();
+        String firstNameOfEmployeeFour = Main.employees.get(3).getFirstName();
+        firstNameFour.setText(firstNameOfEmployeeFour);
+        System.out.println(firstNameFour);
+        firstNameFour.setStyle("-fx-font: 17 arial");
+
+        Label lastNameFour = new Label();
+        String lastNameOfEmployeeFour = Main.employees.get(3).getLastName();
+        lastNameFour.setText(lastNameOfEmployeeFour);
+        System.out.println(lastNameFour);
+
 
         lastNameTwo.setPadding(new Insets(2));
 
        // employeeOne.getChildren().addAll(firstName,lastName);
         employeeOne.getChildren().addAll(firstNameOne, lastNameOne, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Tommy.png"), ebOne);
         employeeTwo.getChildren().addAll(firstNameTwo, lastNameTwo, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Simone.png"), ebTwo);
-        employeeThree.getChildren().add(ebThree);
-        employeeFour.getChildren().add(ebFour);
+        employeeThree.getChildren().addAll(firstNameThree, lastNameThree, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Lise.png"), ebThree);
+        employeeFour.getChildren().addAll(firstNameFour, lastNameFour, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Cecilie.png"), ebFour);
 
         employeeOne.setStyle("-fx-background-color: #D1D1D1;");
         employeeTwo.setStyle("-fx-background-color: #D1D1D1;");
