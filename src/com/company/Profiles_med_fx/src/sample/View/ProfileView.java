@@ -9,16 +9,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.effect.DropShadow;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Window;
 import sample.Model.Employee;
 import sample.Main;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,15 +76,17 @@ public class ProfileView extends Scene{
         Button xx = new Button("HEEEEEJ MEEED DIIIG");
         // employeegrid.setStyle("-fx-background-color: #EFEFEF;");
         employeeTab.setContent(employeegrid);
-        VBox employeeOne = new VBox();
 
+        VBox employeeOne = new VBox();
         VBox employeeTwo = new VBox();
         VBox employeeThree = new VBox();
         VBox employeeFour = new VBox();
         VBox paddingBox = new VBox();
 
+       // employeeOne.setSpacing(5);
 
-        paddingBox.setPrefSize(1,60);
+
+        paddingBox.setPrefSize(0,60);
         employeeOne.setPrefSize(150,200);
         employeeTwo.setPrefSize(150,200);
         employeeThree.setPrefSize(150,200);
@@ -119,10 +122,38 @@ public class ProfileView extends Scene{
         employeeThree.setAlignment(Pos.BOTTOM_CENTER);
         employeeFour.setAlignment(Pos.BOTTOM_CENTER);
 
+// Labels which indicates first and lastname on first hairdresser
+        Label firstNameOne = new Label();
+        String firstNameOfEmployee = Main.employees.get(0).getFirstName();
+        firstNameOne.setText(firstNameOfEmployee);
+        System.out.println(firstNameOne);
+        firstNameOne.setStyle("-fx-font: 17 arial");
+
+        Label lastNameOne = new Label();
+        String lastNameOfEmployee = Main.employees.get(0).getLastName();
+        lastNameOne.setText(lastNameOfEmployee);
+        System.out.println(lastNameOne);
 
 
-        employeeOne.getChildren().add(ebOne);
-        employeeTwo.getChildren().add(ebTwo);
+// Second hairdresser labels
+        Label firstNameTwo = new Label();
+        String firstNameOfEmployeeTwo = Main.employees.get(1).getFirstName();
+        firstNameTwo.setText(firstNameOfEmployeeTwo);
+        System.out.println(firstNameTwo);
+        firstNameTwo.setStyle("-fx-font: 17 arial");
+
+        Label lastNameTwo = new Label();
+        String lastNameOfEmployeeTwo = Main.employees.get(1).getLastName();
+        lastNameTwo.setText(lastNameOfEmployeeTwo);
+        System.out.println(lastNameTwo);
+
+
+
+        lastNameTwo.setPadding(new Insets(2));
+
+       // employeeOne.getChildren().addAll(firstName,lastName);
+        employeeOne.getChildren().addAll(firstNameOne, lastNameOne, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Tommy.png"), ebOne);
+        employeeTwo.getChildren().addAll(firstNameTwo, lastNameTwo, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Simone.png"), ebTwo);
         employeeThree.getChildren().add(ebThree);
         employeeFour.getChildren().add(ebFour);
 
@@ -131,6 +162,7 @@ public class ProfileView extends Scene{
         employeeThree.setStyle("-fx-background-color: #D1D1D1;");
         employeeFour.setStyle("-fx-background-color: #D1D1D1;");
         paddingBox.setStyle("-fx-background-color: pink;");
+
         employeegrid.getChildren().addAll(employeeOne, employeeTwo, employeeThree, employeeFour, paddingBox);
 
         DropShadow dropShadow = new DropShadow();
@@ -141,13 +173,8 @@ public class ProfileView extends Scene{
         employeeThree.setEffect(dropShadow);
         employeeFour.setEffect(dropShadow);
 
-        Label firstName = new Label();
-        String firstNameOfEmployee = Main.employees.get(0).getFirstName();
-        firstName.setText(firstNameOfEmployee);
-        System.out.println(firstName);
 
-        employeeOne.getChildren().addAll(firstName);
-        
+
 
 
 
@@ -159,6 +186,23 @@ public class ProfileView extends Scene{
 
 
 
+
+
+    }
+
+
+    public VBox CreateVBoxWithImage(String pathname){
+
+        VBox vboxForImage = new VBox();
+        File file = new File(pathname);
+        String localURL = file.toURI().toString();
+
+        Image image = new Image(localURL);
+        ImageView imageView = new ImageView(image);
+
+        vboxForImage.getChildren().add(imageView);
+
+        return vboxForImage;
 
 
     }
