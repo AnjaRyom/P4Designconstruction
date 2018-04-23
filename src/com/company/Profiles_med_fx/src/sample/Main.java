@@ -21,7 +21,7 @@ public class Main extends Application {
 
         //Here we make an instance of the profile view which is a BorderPane and shows it.
 
-        Scene ProfileViewScene = new ProfileView(new BorderPane(),900,500);
+        Scene ProfileViewScene = new ProfileView(new BorderPane(),910,500);
         primaryStage.setScene(ProfileViewScene);
         primaryStage.show();
 

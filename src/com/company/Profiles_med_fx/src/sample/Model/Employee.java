@@ -12,6 +12,7 @@ public abstract class Employee extends Person {
     private boolean present;
     private boolean bonus;
     private String identificationColor;
+    //List<Appointment> appointmentsForEmployee = new ArrayList<>();
 
     public Employee(String firstName, String lastName, String address, int phoneNumber, int dateOfBirth, String sex,
                     double basePrice, int experienceYears, int experienceMonths, String description,
