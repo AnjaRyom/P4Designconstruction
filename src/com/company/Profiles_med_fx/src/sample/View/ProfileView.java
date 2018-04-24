@@ -198,7 +198,7 @@ Here we define the root, which can be seen earlier in the constructor input whic
 
 
 
-/** Gridpane containing Customer setup and elements *//
+/** Gridpane containing Customer setup and elements */
 
         GridPane customergrid = new GridPane();
         Button yy = new Button("DETTE ER FOR NICE");
