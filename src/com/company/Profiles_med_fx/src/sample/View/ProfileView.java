@@ -53,9 +53,13 @@ public class ProfileView extends Scene{
 
 
 
-// Since Profileview is a Scene, it is supposed to have an origin/root.
-// Here we define the root, which can be seen earlier in the constructor input which is at that point empty.
+/** Since Profileview is a Scene, it is supposed to have an origin/root.
+Here we define the root, which can be seen earlier in the constructor input which is at that point empty.
+
+ We also define the TabPane Layout with two different buttons containing different setups.
+ **/
         super.setRoot(layout);
+
 
         TabPane tabPane = new TabPane();
         Tab employeeTab = new Tab();
@@ -71,19 +75,19 @@ public class ProfileView extends Scene{
         tabPane.setPadding(new Insets(0,0,0,0));
         centerMenu.getChildren().addAll(tabPane);
 
+/** Here we define the Employee setup and elements such as grids, boxes and buttons*/
+
+//Gridpane
 
         GridPane employeegrid = new GridPane();
-        Button xx = new Button("HEEEEEJ MEEED DIIIG");
-        // employeegrid.setStyle("-fx-background-color: #EFEFEF;");
         employeeTab.setContent(employeegrid);
 
+//VBoxes containing 4 different hairdressers and 1 paddingbox
         VBox employeeOne = new VBox();
         VBox employeeTwo = new VBox();
         VBox employeeThree = new VBox();
         VBox employeeFour = new VBox();
         VBox paddingBox = new VBox();
-
-       // employeeOne.setSpacing(5);
 
 
         paddingBox.setPrefSize(0,60);
@@ -100,6 +104,25 @@ public class ProfileView extends Scene{
 
         employeegrid.setHgap(20);
         employeegrid.setPadding(new Insets(60));
+
+        employeeOne.setStyle("-fx-background-color: #D1D1D1;");
+        employeeTwo.setStyle("-fx-background-color: #D1D1D1;");
+        employeeThree.setStyle("-fx-background-color: #D1D1D1;");
+        employeeFour.setStyle("-fx-background-color: #D1D1D1;");
+        paddingBox.setStyle("-fx-background-color: pink;");
+
+        employeegrid.getChildren().addAll(employeeOne, employeeTwo, employeeThree, employeeFour, paddingBox);
+
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setRadius(5);
+        dropShadow.setColor(Color.GREY);
+        employeeOne.setEffect(dropShadow);
+        employeeTwo.setEffect(dropShadow);
+        employeeThree.setEffect(dropShadow);
+        employeeFour.setEffect(dropShadow);
+
+
+// Buttons
 
         Button ebOne = new Button("Detaljer");
         ebOne.setStyle("-fx-base: #9A6262;");
@@ -126,90 +149,62 @@ public class ProfileView extends Scene{
         Label firstNameOne = new Label();
         String firstNameOfEmployee = Main.employees.get(0).getFirstName();
         firstNameOne.setText(firstNameOfEmployee);
-        System.out.println(firstNameOne);
         firstNameOne.setStyle("-fx-font: 17 arial");
 
         Label lastNameOne = new Label();
         String lastNameOfEmployee = Main.employees.get(0).getLastName();
         lastNameOne.setText(lastNameOfEmployee);
-        System.out.println(lastNameOne);
-
 
 // Second hairdresser labels
         Label firstNameTwo = new Label();
         String firstNameOfEmployeeTwo = Main.employees.get(1).getFirstName();
         firstNameTwo.setText(firstNameOfEmployeeTwo);
-        System.out.println(firstNameTwo);
         firstNameTwo.setStyle("-fx-font: 17 arial");
 
         Label lastNameTwo = new Label();
         String lastNameOfEmployeeTwo = Main.employees.get(1).getLastName();
         lastNameTwo.setText(lastNameOfEmployeeTwo);
-        System.out.println(lastNameTwo);
-
 
 // Third hairdresser labels
         Label firstNameThree = new Label();
         String firstNameOfEmployeeThree = Main.employees.get(2).getFirstName();
         firstNameThree.setText(firstNameOfEmployeeThree);
-        System.out.println(firstNameThree);
         firstNameThree.setStyle("-fx-font: 17 arial");
 
         Label lastNameThree = new Label();
         String lastNameOfEmployeeThree = Main.employees.get(2).getLastName();
         lastNameThree.setText(lastNameOfEmployeeThree);
-        System.out.println(lastNameThree);
-
 
 // Fourth hairdresser labels
         Label firstNameFour = new Label();
         String firstNameOfEmployeeFour = Main.employees.get(3).getFirstName();
         firstNameFour.setText(firstNameOfEmployeeFour);
-        System.out.println(firstNameFour);
         firstNameFour.setStyle("-fx-font: 17 arial");
 
         Label lastNameFour = new Label();
         String lastNameOfEmployeeFour = Main.employees.get(3).getLastName();
         lastNameFour.setText(lastNameOfEmployeeFour);
-        System.out.println(lastNameFour);
 
+/** Elements are inserted in the different VBox'es containing Hairdressers.
+ * First name, last name, pictures and a personal detail button*/
 
-        lastNameTwo.setPadding(new Insets(2));
-
-       // employeeOne.getChildren().addAll(firstName,lastName);
         employeeOne.getChildren().addAll(firstNameOne, lastNameOne, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Tommy.png"), ebOne);
         employeeTwo.getChildren().addAll(firstNameTwo, lastNameTwo, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Simone.png"), ebTwo);
         employeeThree.getChildren().addAll(firstNameThree, lastNameThree, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Lise.png"), ebThree);
         employeeFour.getChildren().addAll(firstNameFour, lastNameFour, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Cecilie.png"), ebFour);
 
-        employeeOne.setStyle("-fx-background-color: #D1D1D1;");
-        employeeTwo.setStyle("-fx-background-color: #D1D1D1;");
-        employeeThree.setStyle("-fx-background-color: #D1D1D1;");
-        employeeFour.setStyle("-fx-background-color: #D1D1D1;");
-        paddingBox.setStyle("-fx-background-color: pink;");
-
-        employeegrid.getChildren().addAll(employeeOne, employeeTwo, employeeThree, employeeFour, paddingBox);
-
-        DropShadow dropShadow = new DropShadow();
-        dropShadow.setRadius(5);
-        dropShadow.setColor(Color.GREY);
-        employeeOne.setEffect(dropShadow);
-        employeeTwo.setEffect(dropShadow);
-        employeeThree.setEffect(dropShadow);
-        employeeFour.setEffect(dropShadow);
 
 
 
 
 
+/** Gridpane containing Customer setup and elements *//
 
         GridPane customergrid = new GridPane();
         Button yy = new Button("DETTE ER FOR NICE");
         customergrid.getChildren().addAll(yy);
         customergrid.setStyle("-fx-background-color: black;");
         customerTab.setContent(customergrid);
-
-
 
 
 
