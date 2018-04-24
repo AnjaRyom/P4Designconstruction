@@ -1,5 +1,7 @@
 package sample.View;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -127,6 +129,7 @@ Here we define the root, which can be seen earlier in the constructor input whic
         Button ebOne = new Button("Detaljer");
         ebOne.setStyle("-fx-base: #9A6262;");
         ebOne.setTextFill(Color.web("#ffffff"));
+        ebOne.setOnMouseClicked(e ->{EmployeeView.display();});
 
         Button ebTwo = new Button("Detaljer");
         ebTwo.setStyle("-fx-base: #9A6262;");
@@ -188,6 +191,7 @@ Here we define the root, which can be seen earlier in the constructor input whic
 /** Elements are inserted in the different VBox'es containing Hairdressers.
  * First name, last name, pictures and a personal detail button*/
 
+
         employeeOne.getChildren().addAll(firstNameOne, lastNameOne, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Tommy.png"), ebOne);
         employeeTwo.getChildren().addAll(firstNameTwo, lastNameTwo, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Simone.png"), ebTwo);
         employeeThree.getChildren().addAll(firstNameThree, lastNameThree, CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Lise.png"), ebThree);
@@ -195,10 +199,8 @@ Here we define the root, which can be seen earlier in the constructor input whic
 
 
 
-
-
-
 /** Gridpane containing Customer setup and elements */
+
 
         GridPane customergrid = new GridPane();
         Button yy = new Button("DETTE ER FOR NICE");
@@ -226,8 +228,6 @@ Here we define the root, which can be seen earlier in the constructor input whic
 
 
     }
-
-
 
 
 
