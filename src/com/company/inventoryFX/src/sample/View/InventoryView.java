@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
@@ -54,16 +55,26 @@ public class InventoryView extends Scene {
         orderedColumn.setMinWidth(250);
         orderedColumn.setCellValueFactory(new PropertyValueFactory<>("orderButton"));
 
-        /*
-        TableColumn<InventoryAttributes, String> orderedColumn = new TableColumn<>("Bestil");
-        orderedColumn.setMinWidth(200);
-        orderedColumn.setCellValueFactory(new PropertyValueFactory<>("ordered"));
-        */
 
-
+        //This parts calls the table by getting the name, product number, price, quantity, and button
         table = new TableView<>();
         table.setItems(getArticle());
         table.getColumns().addAll(nameColumn, productNrColumn,priceColumn,quantityColumn, orderedColumn);
+
+        //This will be a double-clicks function in the table,
+        //so if the user double-clicks, a window should appear
+        table.setRowFactory( e -> {
+            TableRow<InventoryAttributes> row = new TableRow<>();
+            row.setOnMouseClicked(event -> {
+                if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
+
+                    //ClassName.display();
+
+                }
+            });
+            return row ;
+        });
+
 
         //Need a gridpane in here, in which we will make a table
         GridPane inventoryGridpane = new GridPane();
@@ -71,18 +82,11 @@ public class InventoryView extends Scene {
         inventoryGridpane.setVgap(0);
         inventoryGridpane.setPadding(new Insets(0,0,0,0));
 
-
-                //The last column should be a button, instead of just a boolean
-        //Button orderButton = new Button("Bestil");
-
-
-
         inventoryGridpane.getChildren().addAll(table);
 
         layout.setCenter(inventoryGridpane);
         layout.setLeft(leftMenu);
         layout.setTop(topMenu);
-
 
 
     }
