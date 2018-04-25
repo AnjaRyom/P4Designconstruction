@@ -1,7 +1,7 @@
-package IxD406.Profiles_med_fx.View;
+package IxD406.P4Designconstruction.src.IxD406.Profiles_med_fx.View;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import com.company.Profiles_med_fx.src.sample.Main;
+import com.company.Profiles_med_fx.src.sample.View.EmployeeView;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -15,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import com.company.Profiles_med_fx.src.sample.Main;
 
 import java.io.File;
 
@@ -25,9 +26,9 @@ public class ProfileView extends Scene{
 // Initializing the layout of the scene and the top, left and center menu
 
     BorderPane layout = new BorderPane();
-    CenterMenu centerMenu = new CenterMenu();
-    LeftMenu leftMenu = new LeftMenu();
-    TopMenu topMenu = new TopMenu();
+    IxD406.Profiles_med_fx.View.CenterMenu centerMenu = new IxD406.Profiles_med_fx.View.CenterMenu();
+    IxD406.Profiles_med_fx.View.LeftMenu leftMenu = new IxD406.Profiles_med_fx.View.LeftMenu();
+    IxD406.Profiles_med_fx.View.TopMenu topMenu = new IxD406.Profiles_med_fx.View.TopMenu();
 
 
 // Constructer of class, which currently makes buttons and inserts them the right places
@@ -49,7 +50,7 @@ public class ProfileView extends Scene{
 
 
 /** Since Profileview is a Scene, it is supposed to have an origin/root.
-Here we define the root, which can be seen earlier in the constructor input which is at that point empty.
+ Here we define the root, which can be seen earlier in the constructor input which is at that point empty.
 
  We also define the TabPane Layout with two different buttons containing different setups.
  **/
@@ -122,7 +123,10 @@ Here we define the root, which can be seen earlier in the constructor input whic
         Button ebOne = new Button("Detaljer");
         ebOne.setStyle("-fx-base: #9A6262;");
         ebOne.setTextFill(Color.web("#ffffff"));
-        ebOne.setOnMouseClicked(e ->{EmployeeView.display();});
+        ebOne.setOnAction(e ->{
+            EmployeeView.display(CreateVBoxWithImage("C:\\Users\\Anja\\Desktop\\Billeder\\Tommy.png"));
+
+        });
 
         Button ebTwo = new Button("Detaljer");
         ebTwo.setStyle("-fx-base: #9A6262;");
