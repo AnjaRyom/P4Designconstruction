@@ -41,18 +41,22 @@ public class InventoryView extends Scene {
         TableColumn<InventoryAttributes, String> nameColumn = new TableColumn<>("Navn");
         nameColumn.setMinWidth(400);
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameColumn.setStyle("-fx-font: 17 arial");
 
         TableColumn<InventoryAttributes, String> productNrColumn = new TableColumn<>("Produkt Nr.");
         productNrColumn.setMinWidth(250);
         productNrColumn.setCellValueFactory(new PropertyValueFactory<>("productNr"));
+        productNrColumn.setStyle("-fx-font: 17 arial");
 
         TableColumn<InventoryAttributes, String> priceColumn = new TableColumn<>("Pris");
         priceColumn.setMinWidth(250);
         priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        priceColumn.setStyle("-fx-font: 17 arial");
 
         TableColumn<InventoryAttributes, String> quantityColumn = new TableColumn<>("På lager");
         quantityColumn.setMinWidth(250);
         quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        quantityColumn.setStyle("-fx-font: 17 arial");
 
         TableColumn<InventoryAttributes, String> orderedColumn = new TableColumn<>("Bestil");
         orderedColumn.setMinWidth(250);
@@ -85,6 +89,10 @@ public class InventoryView extends Scene {
         inventoryGridpane.setVgap(0);
         inventoryGridpane.setPadding(new Insets(0,0,0,0));
 
+        //Here I want the size of the table to match up with the inventoryGridPane AKA the "centerview" of our system
+        table.prefHeightProperty().bind(inventoryGridpane.heightProperty());
+        table.prefWidthProperty().bind(inventoryGridpane.widthProperty());
+
 
         //The last column should be a button, instead of just a boolean
         //Button orderButton = new Button("Bestil");
@@ -111,19 +119,24 @@ public class InventoryView extends Scene {
         //I have tried to reduce the amount of code used for buttons, but to no avail
         articles.add(new InventoryAttributes
                 ("Whatever Shampoo", 72401, 14.99, 88, orderButton = new Button("Genbestil")));
-        orderButton.setStyle("-fx-base: #007f00;"); orderButton.setTextFill(Color.web("#ffffff")); orderButton.setOnAction(e -> orderButtonClicked());
+        orderButton.setStyle("-fx-base: #007f00; -fx-font: 17 arial; -fx-background-radius: 5em; -fx-min-width: 100px; -fx-min-height: 100px; -fx-max-width: 100px; -fx-max-height: 100px;");
+            orderButton.setTextFill(Color.web("#ffffff")); orderButton.setOnAction(e -> orderButtonClicked());
         articles.add(new InventoryAttributes
                 ("The Correct HairGoo", 15727, 18.44, 67, orderButton = new Button("Genbestil")));
-        orderButton.setStyle("-fx-base: #007f00;"); orderButton.setTextFill(Color.web("#ffffff"));
+        orderButton.setStyle("-fx-base: #007f00; -fx-font: 17 arial; -fx-background-radius: 5em; -fx-min-width: 100px; -fx-min-height: 100px; -fx-max-width: 100px; -fx-max-height: 100px;");
+        orderButton.setTextFill(Color.web("#ffffff"));
         articles.add(new InventoryAttributes
                 ("Sister's Scissor", 34437, 4.99, 12, orderButton = new Button("Genbestil")));
-        orderButton.setStyle("-fx-base: #007f00;"); orderButton.setTextFill(Color.web("#ffffff"));
+        orderButton.setStyle("-fx-base: #007f00; -fx-font: 17 arial; -fx-background-radius: 5em; -fx-min-width: 100px; -fx-min-height: 100px; -fx-max-width: 100px; -fx-max-height: 100px;");
+        orderButton.setTextFill(Color.web("#ffffff"));
         articles.add(new InventoryAttributes
                 ("Balsamico Balsam", 14895, 21.95, 27, orderButton = new Button("Genbestil")));
-        orderButton.setStyle("-fx-base: #007f00;"); orderButton.setTextFill(Color.web("#ffffff"));
+        orderButton.setStyle("-fx-base: #007f00; -fx-font: 17 arial; -fx-background-radius: 5em; -fx-min-width: 100px; -fx-min-height: 100px; -fx-max-width: 100px; -fx-max-height: 100px;");
+        orderButton.setTextFill(Color.web("#ffffff"));
         articles.add(new InventoryAttributes
                 ("Psycho Shaver", 14894, 104.95, 3, orderButton = new Button("Genbestil")));
-        orderButton.setStyle("-fx-base: #007f00;"); orderButton.setTextFill(Color.web("#ffffff"));
+        orderButton.setStyle("-fx-base: #007f00; -fx-font: 17 arial; -fx-background-radius: 5em; -fx-min-width: 100px; -fx-min-height: 100px; -fx-max-width: 100px; -fx-max-height: 100px;");
+        orderButton.setTextFill(Color.web("#ffffff"));
         return articles;
     }
 
