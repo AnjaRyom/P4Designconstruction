@@ -10,6 +10,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
+import IxD406.Profiles_med_fx.View;
 
 import java.util.ArrayList;
 import java.util.List;

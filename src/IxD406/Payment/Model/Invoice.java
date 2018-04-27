@@ -14,7 +14,7 @@ public class Invoice {
 
         for (Product item :
                 productList) {
-            //sum += item.getPrice(); //getPrice() does not exist yet, implement
+            //sum += item.getPrice(); //getPrice() does not exist yet, implement in Inventory/Product
 
         }
         return sum;

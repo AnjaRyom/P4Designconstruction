@@ -1,6 +1,6 @@
-package IxD406.P4Designconstruction.src.IxD406.Profiles_med_fx;
+package IxD406.Profiles_med_fx;
 
-import IxD406.P4Designconstruction.src.IxD406.Profiles_med_fx.View.ProfileView;
+import IxD406.Profiles_med_fx.View.ProfileView;
 import IxD406.Profiles_med_fx.Model.Employee;
 import javafx.application.Application;
 import javafx.scene.Scene;

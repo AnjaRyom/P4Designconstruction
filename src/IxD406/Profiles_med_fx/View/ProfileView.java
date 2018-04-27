@@ -1,7 +1,5 @@
-package IxD406.P4Designconstruction.src.IxD406.Profiles_med_fx.View;
+package IxD406.Profiles_med_fx.View;
 
-import com.company.Profiles_med_fx.src.sample.Main;
-import com.company.Profiles_med_fx.src.sample.View.EmployeeView;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -15,7 +13,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import com.company.Profiles_med_fx.src.sample.Main;
+import IxD406.Profiles_med_fx.Main;
 
 import java.io.File;
 

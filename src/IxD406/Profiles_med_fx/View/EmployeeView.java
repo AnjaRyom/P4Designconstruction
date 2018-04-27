@@ -1,6 +1,6 @@
-package IxD406.P4Designconstruction.src.IxD406.Profiles_med_fx.View;
+package IxD406.Profiles_med_fx.View;
 
-import com.company.Profiles_med_fx.src.sample.Main;
+import IxD406.Profiles_med_fx.Main;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,7 +9,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import com.company.Profiles_med_fx.src.sample.Main;
 
 public class EmployeeView extends ProfileView {
 

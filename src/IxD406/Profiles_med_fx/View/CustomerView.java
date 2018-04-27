@@ -1,6 +1,5 @@
 package IxD406.Profiles_med_fx.View;
 
-import IxD406.P4Designconstruction.src.IxD406.Profiles_med_fx.View.ProfileView;
 import javafx.scene.Parent;
 import javafx.scene.layout.BorderPane;
 
