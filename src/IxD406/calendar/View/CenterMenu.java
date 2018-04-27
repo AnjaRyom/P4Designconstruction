@@ -8,7 +8,7 @@ import javafx.scene.layout.GridPane;
 /**
  * This class describes the centermenu for calendar view
  * The menu extends from GridPane
- * The centermenu is absract since the center is either dayview or weekview
+ * The centermenu is abstract since the center is either dayview or weekview
  */
 
 public abstract class CenterMenu extends GridPane{
