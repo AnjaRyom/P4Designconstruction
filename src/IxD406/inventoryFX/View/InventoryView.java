@@ -76,6 +76,7 @@ public class InventoryView extends Scene {
                 if (event.getClickCount() == 2 && (! row.isEmpty()) ) {
                     InventoryAttributes rowData = row.getItem();
                     System.out.println("You doubleclicked the " +rowData.getName());
+                    InventoryPopUp.display(rowData.getName(), rowData.getProductNr(), rowData.getPrice(), rowData.getQuantity(), rowData.getOrderButton());
                     //ClassName.display();
 
                 }
@@ -108,7 +109,7 @@ public class InventoryView extends Scene {
     }
 
     public void orderButtonClicked (){
-        this.orderButton.setStyle("-fx-base: #6666FF;"); //This does not work, since it only changes the latest button created.
+        this.orderButton.setStyle("-fx-base: #6666FF; -fx-font: 17 arial; -fx-background-radius: 5em; -fx-min-width: 100px; -fx-min-height: 100px; -fx-max-width: 100px; -fx-max-height: 100px;"); //This does not work, since it only changes the latest button created.
         //The only button having the orderButtonClicked action will not change color on itself
     }
 

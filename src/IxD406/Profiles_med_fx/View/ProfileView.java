@@ -1,5 +1,4 @@
 package IxD406.Profiles_med_fx.View;
-
 import IxD406.Profiles_med_fx.Main;
 import IxD406.Profiles_med_fx.Model.Customer;
 import javafx.geometry.Insets;
@@ -15,7 +14,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-
 import java.io.File;
 
 /* This class describes the Profileview which is a scene*/
@@ -206,14 +204,12 @@ public class ProfileView extends Scene{
 
 /** Gridpane containing Customer setup, tableView and elements */
 
-
         GridPane customerGrid = new GridPane();
         customerGrid.setVgap(5);
 
         Button addCustomerButton = new Button("+ Tilføj kunde");
         addCustomerButton.setStyle("-fx-base: #9CBC92;");
         addCustomerButton.setTextFill(Color.web("#ffffff"));
-        //Der skal her tilføjes en action til en popup hvor man tilføjer kunde
 
 
         TableView<Customer> table = new TableView<>();
@@ -226,6 +222,7 @@ public class ProfileView extends Scene{
         TableColumn numberCol = new TableColumn("Nummer");
         numberCol.setPrefWidth(100);
         numberCol.setStyle("-fx-alignment: CENTER");
+
 
         TableColumn lastNameCol = new TableColumn("Efternavn");
         lastNameCol.setPrefWidth(290);
@@ -258,15 +255,12 @@ public class ProfileView extends Scene{
         GridPane.setConstraints(addCustomerButton, 0, 0);
         GridPane.setConstraints(table, 0, 2);
 
-
         customerGrid.setPadding(new Insets(10));
         customerGrid.getChildren().addAll(addCustomerButton, table);
         customerTab.setContent(customerGrid);
 
 
     }
-
-
 
     public static VBox CreateVBoxWithImage(String pathname){
 

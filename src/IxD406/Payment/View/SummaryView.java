@@ -12,3 +12,5 @@ public class SummaryView {
     VBox rightVBox = new VBox();
 
 }
+
+

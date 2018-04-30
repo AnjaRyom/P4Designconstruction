@@ -29,8 +29,6 @@ public class Main extends Application {
         employees.add(new Employee("Lise", "Harelund", "Something", 88888888, 123, "Kvinde", 200, 2, 5, "blabla", "jaja", 2, 0, true, true, "blue" ));
         employees.add(new Employee("Cecilie",  "Jensen", "Something", 88888888, 123, "Kvinde", 200, 2, 5, "blabla", "jaja", 2, 0, true, true, "blue"));
 
-
-
         //HERE ARE CUSTOMERS
         customers.add(new Customer("Bob", "Bobsen",
                 "Jomfru ane gade", 90201010, 10, "Mand",
