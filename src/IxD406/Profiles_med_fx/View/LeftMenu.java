@@ -5,9 +5,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
-//DENNE KLASSE ER TAGET FRA KALENDERGRUPPEN OG VIL LØBENDE OPDATERES - ER KUN TAGET SOM MIDLERTIDIGT MIDDEL.
-
 import java.io.File;
+
+//DENNE KLASSE ER TAGET FRA KALENDERGRUPPEN OG VIL LØBENDE OPDATERES - ER KUN TAGET SOM MIDLERTIDIGT MIDDEL.
 
 /*
  * This class describes the leftmenu for the whole application
