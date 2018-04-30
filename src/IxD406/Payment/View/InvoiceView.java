@@ -6,13 +6,13 @@ public class InvoiceView {
     private int quantity;
     private double price;
 
-    public invoiceViewConst1() {
+    public InvoiceView() {
         this.name = "";
         this.quantity = 0;
         this.price = 0;
     }
 
-    public invoiceViewConst2(String name, int quantity, double price) {
+    public InvoiceView(String name, int quantity, double price) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
