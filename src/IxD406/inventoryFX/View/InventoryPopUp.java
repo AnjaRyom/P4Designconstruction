@@ -31,7 +31,7 @@ public class InventoryPopUp extends GridPane {
         /**
          * Here the heading is made.
          */
-        Label heading = new Label(name);
+        Label heading = new Label("Nr. 2015 - Funkpunk Haircolor Blue");
         heading.setStyle("-fx-font: 16 arial;");
         heading.setPadding(new Insets(10, 10, 10, 0));
         heading.setAlignment(Pos.TOP_LEFT);
@@ -40,7 +40,7 @@ public class InventoryPopUp extends GridPane {
          * The articles in stock.
          */
         Label stock = new Label("På lager");
-        Label inStock = new Label(Integer.toString(quantity));
+        Label inStock = new Label("1");
 
         HBox articleInStock = new HBox();
         articleInStock.getChildren().addAll(stock, inStock);
@@ -101,7 +101,7 @@ public class InventoryPopUp extends GridPane {
         purPrice.setSpacing(180);
 
         Label retailPrice = new Label("Udsalgspris");
-        Label Dkk = new Label(Double.toString(price));
+        Label Dkk = new Label("2000 dkk");
 
         HBox retPrice = new HBox();
         retPrice.getChildren().addAll(retailPrice, Dkk);
